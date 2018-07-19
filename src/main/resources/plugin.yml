@@ -1,8 +1,15 @@
 name: ChangeNickname
 version: ${project.version}
-main: xyz.greem.Plugin
+main: xyz.greem.discordsrvnickname.Plugin
 prefix: ChangeNickname
 loadbefore: [DiscordSRV]
 depend: [DiscordSRV]
 authors: [Greeem]
 description: Sets a user's Minecraft nickname to their Discord name upon linking their accounts.
+commands:
+  updatenickname:
+    description: Sets your minecraft nickname to your Discord nickname.
+    usage: /updatenickname
+  upnick:
+    description: Alias of /updatenickname.
+    usage: /upnick

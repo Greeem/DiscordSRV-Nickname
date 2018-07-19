@@ -1,4 +1,4 @@
-package xyz.greem;
+package xyz.greem.discordsrvnickname;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import github.scarsz.discordsrv.api.Subscribe;
