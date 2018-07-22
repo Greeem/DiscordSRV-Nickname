@@ -1,4 +1,4 @@
-package xyz.greem.discordsrvnickname;
+package xyz.greem.srvutils.require;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import org.bukkit.ChatColor;

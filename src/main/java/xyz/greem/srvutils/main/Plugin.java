@@ -1,4 +1,4 @@
-package xyz.greem.discordsrvnickname;
+package xyz.greem.srvutils.main;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import org.bukkit.plugin.java.JavaPlugin;

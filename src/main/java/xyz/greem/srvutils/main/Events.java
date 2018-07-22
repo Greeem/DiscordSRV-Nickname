@@ -1,8 +1,6 @@
-package xyz.greem.discordsrvnickname;
+package xyz.greem.srvutils.main;
 
 import github.scarsz.discordsrv.DiscordSRV;
-import github.scarsz.discordsrv.api.Subscribe;
-import github.scarsz.discordsrv.api.events.AccountLinkedEvent;
 import github.scarsz.discordsrv.dependencies.jda.core.entities.Member;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,17 +9,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 
-public class DiscordSRVListener implements Listener {
-
-    @Subscribe
-    public void accountsLinked(AccountLinkedEvent event) {
-        Bukkit.dispatchCommand( Bukkit.getConsoleSender(), "nick " +
-                event.getPlayer().getName() + " " +
-                DiscordSRV.getPlugin().getMainGuild().getMember( event.getUser() ).getEffectiveName() );
-    }
+public class Events implements Listener {
 
     @EventHandler
-    public void onLogin(PlayerLoginEvent event) {
+    public static void onLogin(PlayerLoginEvent event) {
         if (!DiscordSRV.getPlugin().getAccountLinkManager().getLinkedAccounts().containsValue(event.getPlayer().getUniqueId())) {
             event.getPlayer().sendRawMessage(ChatColor.GREEN +
                     "Please link your Discord account to your Minecraft account via " +
@@ -35,10 +26,11 @@ public class DiscordSRVListener implements Listener {
     }
 
     @EventHandler
-    public void onMessageSend(AsyncPlayerChatEvent event) {
+    public static void onMessageSend(AsyncPlayerChatEvent event) {
         if (!DiscordSRV.getPlugin().getAccountLinkManager().getLinkedAccounts().containsValue(event.getPlayer().getUniqueId())) {
             event.getPlayer().sendRawMessage(ChatColor.GREEN + "You cannot chat until you've linked your Discord account!");
             event.setCancelled(true);
         }
     }
+
 }

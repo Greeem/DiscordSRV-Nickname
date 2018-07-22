@@ -1,6 +1,6 @@
 name: ChangeNickname
 version: ${project.version}
-main: xyz.greem.discordsrvnickname.Plugin
+main: xyz.greem.srvutils.main.Plugin
 prefix: ChangeNickname
 loadbefore: [DiscordSRV]
 depend: [DiscordSRV]
